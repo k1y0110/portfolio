@@ -1,0 +1,120 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+}
+.header{
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    &-inner{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &-ttl{
+        font-size: 3.2rem;
+        font-weight: bold;
+        text-align: center;
+    }
+    &-list{
+        display: flex;
+        &-item{
+            font-size: 2rem;
+            &:not(:last-child){
+                padding-right: 20px;
+            }
+        }
+    }
+}
+.fv{
+    width: 100%;
+    margin: 80px auto;
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.about{
+    &-ttl{
+        font-size: 4rem;
+        font-weight: bold;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+    &-inner{
+        font-family: "Noto Sans JP", sans-serif;
+        padding: 0 30px 50px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-img{
+        height: 250px;
+        width: 250px;
+        border-radius: 150px;
+    }
+    &-wrapper{
+        margin-left: 50px;
+    }
+    &-me{
+        display: flex;
+        flex-wrap: wrap;
+        width: 300px;
+        margin-bottom: 30px;
+        dt{
+            width: 30%;
+        }
+        dd{
+            width: 70%;
+        }
+    }
+
+}
+.works{
+    text-align: center;
+    &-ttl{
+        font-size: 4rem;
+        font-weight: bold;
+        padding-bottom: 50px;
+    }
+    &-inner{
+        font-family: "Noto Sans JP", sans-serif;
+        padding: 0 30px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    &-box{
+        width: calc((100% - 50px) / 3);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        margin-bottom: 50px;
+        img{
+            border-bottom: .5px rgba(0, 0, 0, 0.16) solid;
+        }
+        h3{
+            font-size: 3rem;
+            font-weight: bold;
+            padding: 20px 0;
+        }
+        p{
+            font-size: 2rem;
+            padding-bottom: 10px;
+        }
+        .git-url{
+            display: block;
+            padding: 0 10px 20px;
+        }
+    }
+}
+.footer{
+    text-align: center;
+    margin-bottom: 50px;
+}
