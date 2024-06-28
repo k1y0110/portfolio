@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>PORTFOLIO</title>
 </head>
@@ -17,24 +18,35 @@
             <a href="#top" class="header-ttl">
                 HORIMOTO<br>KIYOHITO
             </a>
-            <nav class="heder-nav">
+            <nav class="header-nav">
                 <ul class="header-list">
-                    <li class="header-list-item"><a href="#about">About</a></li>
-                    <li class="header-list-item"><a href="#works">Works</a></li>
-                    <li class="header-list-item"><a href="">Contact</a></li>
+                    <li class="header-list-item">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="header-list-item">
+                        <a href="#works">Works</a>
+                    </li>
+                    <li class="header-list-item">
+                        <a href="">Contact</a>
+                    </li>
                 </ul>
             </nav>
+            <button class="burger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
     <main class="main">
-        <div class="fv"><img src="images/first-vew.jpg" alt="first-vew"></div>
+        <div class="fv" id="top" data-aos="zoom-in" data-aos-duration="700"><img src="images/first-vew.jpg" alt="first-vew"></div>
         <div class="about" id="about">
-            <h2 class="about-ttl">
+            <h2 class="about-ttl" data-aos="fade-up">
                 About
             </h2>
             <div class="about-inner">
-                <img src="images/Designer.jpeg" alt="about" class="about-img">
-                <div class="about-wrapper">
+                <img src="images/Designer.jpeg" alt="about" class="about-img" data-aos="flip-left">
+                <div class="about-wrapper" data-aos="flip-right">
                     <dl class="about-me">
                         <dt>名前</dt>
                         <dd>堀本　清仁</dd>
@@ -57,33 +69,34 @@
         </div>
 
         <div class="works" id="works">
-            <h2 class="works-ttl">
+            <h2 class="works-ttl" data-aos="fade-up">
                 Works
             </h2>
             <div class="works-inner">
-                <div class="works-box">
-                    <a href="https://k1y0110.github.io/react-news/">
+                <div class="works-box" data-aos="flip-up" data-aos-duration="700"
+                data-aos-delay="100">
+                    <a href="https://k1y0110.github.io/react-news/" target="_blank" rel="noopener noreferrer">
                         <img src="images/ｗ-img1.png" alt="NewsSite" class="works-box-img">
                         <h3 class="worka-box-ttl">NewsSite</h3>
                         <p class="caption">React + News API</p>
                     </a>
-                    <a href="https://github.com/k1y0110/react-news" class="git-url">https://github.com/k1y0110/react-news</a>
+                    <a href="https://github.com/k1y0110/react-news" target="_blank" rel="noopener noreferrer" class="git-url">https://github.com/k1y0110/react-news</a>
                 </div>
-                <div class="works-box">
-                    <a href="https://k1y0110.github.io/CrestaDesign/">
+                <div class="works-box" data-aos="flip-up" data-aos-duration="700" data-aos-delay="100">
+                    <a href="https://k1y0110.github.io/CrestaDesign/" target="_blank" rel="noopener noreferrer">
                         <img src="images/ｗ-img2.png" alt="CrestaDesign" class="works-box-img">
                         <h3 class="worka-box-ttl">Cresta Design</h3>
                         <p class="caption">オフィス空間デザイン会社HP</p>
                     </a>
-                    <a href="https://github.com/k1y0110/CrestaDesign" class="git-url">https://github.com/k1y0110/CrestaDesign</a>
+                    <a href="https://github.com/k1y0110/CrestaDesign" target="_blank" rel="noopener noreferrer" class="git-url">https://github.com/k1y0110/CrestaDesign</a>
                 </div>
-                <div class="works-box">
-                    <a href="https://k1y0110.github.io/your_cording/">
+                <div class="works-box" data-aos="flip-up" data-aos-duration="700" data-aos-delay="100">
+                    <a href="https://k1y0110.github.io/your_cording/" target="_blank" rel="noopener noreferrer">
                         <img src="images/ｗ-img3.png" alt="your_cording" class="works-box-img">
                         <h3 class="worka-box-ttl">ユアコーディング</h3>
                         <p class="caption">Web制作会社HP</p>
                     </a>
-                    <a href="https://github.com/k1y0110/your_cording" class="git-url">https://github.com/k1y0110/your_cording</a>
+                    <a href="https://github.com/k1y0110/your_cording" target="_blank" rel="noopener noreferrer" class="git-url">https://github.com/k1y0110/your_cording</a>
                 </div>
             </div>
         </div>
@@ -91,5 +104,8 @@
     <footer class="footer">
         <small>©HORIMOTO KIYOHITO 2024</small>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

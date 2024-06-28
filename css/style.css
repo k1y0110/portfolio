@@ -5,6 +5,13 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
+  color: #575757;
+}
+
+a:hover {
+  opacity: 0.7;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .header {
@@ -18,14 +25,19 @@ body {
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 .header-inner {
+  max-width: 1024px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 30px;
 }
 .header-ttl {
   font-size: 3.2rem;
@@ -42,6 +54,10 @@ body {
 }
 .header-list-item:not(:last-child) {
   padding-right: 20px;
+}
+
+.burger-btn {
+  display: none;
 }
 
 .fv {
@@ -124,6 +140,7 @@ body {
   margin-bottom: 50px;
 }
 .works-box img {
+  width: 100%;
   border-bottom: 0.5px rgba(0, 0, 0, 0.16) solid;
 }
 .works-box h3 {
@@ -135,12 +152,119 @@ body {
   font-size: 2rem;
   padding-bottom: 10px;
 }
+.works-box a {
+  display: block;
+}
 .works-box .git-url {
   display: block;
-  padding: 0 10px 20px;
+  margin: 0 10px 20px;
+  color: #bababa;
+}
+.works-box .git-url:hover {
+  background-color: #bababa;
+  color: #fff;
+  opacity: 1;
 }
 
 .footer {
   text-align: center;
   margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+  .header-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+  }
+  .header-list {
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header-list-item {
+    padding-right: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header-list-item:not(:last-child) {
+    margin-bottom: 50px;
+  }
+  .burger-btn {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 28px;
+    background: none;
+    border: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    cursor: pointer;
+  }
+  .burger-btn span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    border-radius: 4px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .burger-btn span:nth-child(1) {
+    top: 0;
+  }
+  .burger-btn span:nth-child(2) {
+    top: 12px;
+  }
+  .burger-btn span:nth-child(3) {
+    bottom: 0;
+  }
+  .burger-btn.open span:nth-child(1) {
+    -webkit-transform: translateY(12px) rotate(-45deg);
+            transform: translateY(12px) rotate(-45deg);
+  }
+  .burger-btn.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger-btn.open span:nth-child(3) {
+    -webkit-transform: translateY(-12px) rotate(45deg);
+            transform: translateY(-12px) rotate(45deg);
+  }
+  body.noscroll {
+    overflow: hidden;
+  }
+  .about-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .works-inner {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .works-box {
+    display: block;
+    width: 80%;
+    margin: 0 auto 50px;
+  }
 }/*# sourceMappingURL=style.css.map */

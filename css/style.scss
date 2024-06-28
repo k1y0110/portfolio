@@ -4,6 +4,11 @@ html{
 body{
     font-family: "Roboto", sans-serif;
     font-size: 1.6rem;
+    color: #575757;
+}
+a:hover{
+    opacity: .7;
+    transition: .5s;
 }
 .header{
     position: fixed;
@@ -14,9 +19,13 @@ body{
     background-color: #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     &-inner{
+        max-width: 1024px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 30px;
     }
     &-ttl{
         font-size: 3.2rem;
@@ -32,6 +41,9 @@ body{
             }
         }
     }
+}
+.burger-btn{
+    display: none;
 }
 .fv{
     width: 100%;
@@ -97,6 +109,7 @@ body{
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
         margin-bottom: 50px;
         img{
+            width: 100%;
             border-bottom: .5px rgba(0, 0, 0, 0.16) solid;
         }
         h3{
@@ -108,13 +121,107 @@ body{
             font-size: 2rem;
             padding-bottom: 10px;
         }
+        a{
+            display: block;
+        }
         .git-url{
             display: block;
-            padding: 0 10px 20px;
+            margin: 0 10px 20px;
+            color: #bababa;
+            &:hover{
+                background-color: #bababa;
+                color: #fff;
+                opacity: 1;
+            }
         }
     }
 }
 .footer{
     text-align: center;
     margin-bottom: 50px;
+}
+@media screen and (max-width:1024px){
+    .header{
+        &-nav{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+        }
+        &-list{
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &-item{
+                padding-right: 0 !important;
+                margin-left: auto;
+                margin-right: auto;
+                &:not(:last-child){
+                    margin-bottom: 50px;
+                }
+            }  
+        }
+    }
+    .burger-btn{
+        display: block;
+        position: relative;
+        width: 40px;
+        height: 28px;
+        background: none;
+        border: none;
+        appearance: none;
+        cursor: pointer;
+        span{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #333;
+            border-radius: 4px;
+            transition: .3s;
+            &:nth-child(1){
+                top: 0;
+            }
+            &:nth-child(2){
+                top: 12px;
+            }
+            &:nth-child(3){
+                bottom: 0;
+            }
+        }
+        &.open span{
+            &:nth-child(1){
+                transform: translateY(12px) rotate(-45deg);
+            }
+            &:nth-child(2){
+                opacity: 0;
+            }
+            &:nth-child(3){
+                transform: translateY(-12px) rotate(45deg);
+            }
+        }      
+    }
+    body.noscroll{
+        overflow: hidden;
+    }
+    .about{
+        &-inner{
+            flex-direction: column;
+        }
+    }
+    .works{
+        &-inner{
+            justify-content: center;
+            flex-direction: column;
+        }
+        &-box{
+            display: block;
+            width: 80%;
+            margin: 0 auto 50px;
+        }
+    }
 }
