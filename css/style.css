@@ -114,6 +114,40 @@ a:hover {
   width: 70%;
 }
 
+.skill-ttl {
+  font-size: 4rem;
+  font-weight: bold;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.skill-inner {
+  font-family: "Noto Sans JP", sans-serif;
+  padding: 0 30px 50px;
+  margin: 0 auto;
+}
+.skill-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.skill-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  color: #000;
+}
+.skill-list li img {
+  width: 80px;
+  height: 80px;
+}
+
 .works {
   text-align: center;
 }
@@ -132,6 +166,8 @@ a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .works-box {
   width: calc((100% - 50px) / 3);

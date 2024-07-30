@@ -88,7 +88,33 @@ a:hover{
             width: 70%;
         }
     }
-
+}
+.skill{
+    &-ttl{
+        font-size: 4rem;
+        font-weight: bold;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+    &-inner{
+        font-family: "Noto Sans JP", sans-serif;
+        padding: 0 30px 50px;
+        margin: 0 auto;
+    }
+    &-list{
+        display: flex;
+        justify-content: space-around;
+        li{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: #000;
+            img{
+                width: 80px;
+                height: 80px;
+            }
+        }
+    }
 }
 .works{
     text-align: center;
@@ -103,6 +129,7 @@ a:hover{
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
     &-box{
         width: calc((100% - 50px) / 3);
