@@ -6,6 +6,60 @@ body{
     font-size: 1.6rem;
     color: #575757;
 }
+@keyframes infinity-scroll-down{
+    from {
+      transform: translateY(0);
+    }
+      to {
+      transform: translateY(-100%);
+    }
+}
+@keyframes infinity-scroll-up{
+    from {
+      transform: translateY(-100%);
+    }
+      to {
+      transform: translateY(0);
+    }
+}
+@keyframes txt-animation1{
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+        }
+    100%{
+        transform: translateX(0);
+       opacity: 1;
+    }
+  }
+  @keyframes txt-animation2{
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+        }
+    100%{
+        transform: translateX(0);
+       opacity: 1;
+    }
+  }
+  @keyframes rotate {
+    0% {
+      -webkit-transform: rotateZ(0deg);
+              transform: rotateZ(0deg);
+    }
+    100% {
+      -webkit-transform: rotateZ(360deg);
+              transform: rotateZ(360deg);
+    }
+  }
+  @keyframes stop1{ 
+    0% {stop-color: #575757;}
+    100% {stop-color: #00ffd5;}
+ }
+ @keyframes stop2{ 
+    0% {stop-color: #575757;}
+    100% {stop-color: #00ffd5;}
+ }
 a:hover{
     opacity: .7;
     transition: .5s;
@@ -26,18 +80,90 @@ a:hover{
         margin-left: auto;
         margin-right: auto;
         padding: 0 30px;
+        
     }
     &-ttl{
+        display: flex;
         font-size: 3.2rem;
         font-weight: bold;
         text-align: center;
+        font-family: "Sankofa Display", sans-serif;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-left: 50px;
+        p{
+            animation: txt-animation1 1.5s ease-out;
+            padding-left: 15px;
+        }
+        &-icon{
+            display: flex;
+            svg{
+                width: 50px;
+                fill: url(#gradient);
+                animation: rotate 15s linear infinite;
+                #stop1{
+                    animation: stop1 5s ease-in-out infinite alternate;
+                }
+                #stop2{
+                    animation: stop2 5s ease-in-out infinite alternate;
+                }
+            }
+        }
     }
     &-list{
         display: flex;
+        animation: txt-animation2 1.5s ease-out;
+        margin-right: 50px;
         &-item{
             font-size: 2rem;
             &:not(:last-child){
                 padding-right: 20px;
+            }
+        }
+    }
+}
+.loop{
+    white-space: nowrap;
+    &-wrapper{
+        position: fixed;
+        width: 20px;
+        height: 100%;
+        z-index: 998;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background-color: #575757;
+        ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+        li{
+            display: flex;
+            justify-content: center;
+            font-size: 1rem;
+            letter-spacing: 1rem;
+            color: #fff;
+            padding-bottom: 1rem;
+        }
+    }
+    &-down{
+        left: 0;
+        ul{
+            animation: infinity-scroll-down 40s infinite linear 1s both;
+            li{
+                writing-mode: vertical-rl;
+            }
+        }
+    }
+    &-up{
+        right: 0;
+        ul{
+            animation: infinity-scroll-up 40s infinite linear 1s both;
+            li{
+                writing-mode: vertical-lr;
             }
         }
     }
@@ -125,16 +251,27 @@ a:hover{
     }
     &-inner{
         font-family: "Noto Sans JP", sans-serif;
-        padding: 0 30px;
+        margin: 0 30px;
+        &-ttl{
+            margin-top: 30px;
+            margin-bottom: -5px;
+            font-size: 3rem;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+    }
+    &-wrapper{
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        border: #000 5px solid;
+        border-radius: 3px;
     }
     &-box{
-        width: calc((100% - 50px) / 3);
+        width: calc((100% - 100px) / 3);
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-        margin-bottom: 50px;
+        margin: 15px;
         img{
             width: 100%;
             border-bottom: .5px rgba(0, 0, 0, 0.16) solid;
@@ -155,6 +292,9 @@ a:hover{
             display: block;
             margin: 0 10px 20px;
             color: #bababa;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
             &:hover{
                 background-color: #bababa;
                 color: #fff;
@@ -163,8 +303,23 @@ a:hover{
         }
     }
 }
+.webapp{
+    border-color: rgb(110, 146, 255);
+    &-ttl{
+        background-color: rgb(110, 146, 255);
+        color: #000;
+    }
+}
+.website{
+    border-color: rgb(255, 110, 231);
+    &-ttl{
+        background-color: rgb(255, 110, 231);
+        color: #000;
+    }
+}
 .footer{
     text-align: center;
+    margin-top: 50px;
     margin-bottom: 50px;
 }
 @media screen and (max-width:1024px){
@@ -236,6 +391,9 @@ a:hover{
         overflow: hidden;
     }
     .about{
+        &-img{
+            margin-bottom: 30px;
+        }
         &-inner{
             flex-direction: column;
         }
@@ -244,6 +402,9 @@ a:hover{
         &-inner{
             justify-content: center;
             flex-direction: column;
+        }
+        &-wrapper{
+            padding-top: 50px;
         }
         &-box{
             display: block;
