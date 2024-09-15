@@ -6,17 +6,33 @@ body{
     font-size: 1.6rem;
     color: #575757;
 }
-@keyframes infinity-scroll-down{
+@keyframes scroll-down1{
     from {
-      transform: translateY(0);
+      transform: translateY(100%);
     }
       to {
       transform: translateY(-100%);
     }
 }
-@keyframes infinity-scroll-up{
+@keyframes scroll-down2{
+    from {
+      transform: translateY(0);
+    }
+      to {
+      transform: translateY(-200%);
+    }
+}
+@keyframes scroll-up1{
     from {
       transform: translateY(-100%);
+    }
+      to {
+      transform: translateY(100%);
+    }
+}
+@keyframes scroll-up2{
+    from {
+      transform: translateY(-200%);
     }
       to {
       transform: translateY(0);
@@ -152,7 +168,12 @@ a:hover{
     &-down{
         left: 0;
         ul{
-            animation: infinity-scroll-down 40s infinite linear 1s both;
+            &:first-of-type{
+                animation: scroll-down1 96s -48s linear infinite;
+            }
+            &:last-of-type{
+                animation: scroll-down2 96s linear infinite;
+            }
             li{
                 writing-mode: vertical-rl;
             }
@@ -161,7 +182,12 @@ a:hover{
     &-up{
         right: 0;
         ul{
-            animation: infinity-scroll-up 40s infinite linear 1s both;
+            &:first-of-type{
+                animation: scroll-up1 96s -48s linear infinite;
+            }
+            &:last-of-type{
+                animation: scroll-up2 96s linear infinite;
+            }
             li{
                 writing-mode: vertical-lr;
             }
@@ -177,6 +203,7 @@ a:hover{
     img{
         width: 100%;
         object-fit: cover;
+        padding: 0 20px;
     }
 }
 .about{
@@ -193,6 +220,7 @@ a:hover{
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
     }
     &-img{
         height: 250px;
@@ -229,13 +257,15 @@ a:hover{
     }
     &-list{
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        gap: 3rem;
         li{
             display: flex;
             flex-direction: column;
-            text-align: center;
+            align-items: center;
+            gap: 1rem;
             color: #000;
-            img{
+            svg{
                 width: 80px;
                 height: 80px;
             }
@@ -247,15 +277,15 @@ a:hover{
     &-ttl{
         font-size: 4rem;
         font-weight: bold;
-        padding-bottom: 50px;
     }
     &-inner{
         font-family: "Noto Sans JP", sans-serif;
         margin: 0 30px;
         &-ttl{
-            margin-top: 30px;
+            margin-top: 50px;
             margin-bottom: -5px;
             font-size: 3rem;
+            line-height: 3;
             font-weight: bold;
             border-radius: 3px;
         }
@@ -324,6 +354,12 @@ a:hover{
 }
 @media screen and (max-width:1024px){
     .header{
+        &-inner{
+            justify-content: center;
+        }
+        &-ttl{
+            margin-left: -50px;
+        }
         &-nav{
             display: none;
             position: fixed;
@@ -338,6 +374,7 @@ a:hover{
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin: 0;
             &-item{
                 padding-right: 0 !important;
                 margin-left: auto;
@@ -350,7 +387,9 @@ a:hover{
     }
     .burger-btn{
         display: block;
-        position: relative;
+        position: absolute;
+        top: 2.5rem;
+        right: 2rem;
         width: 40px;
         height: 28px;
         background: none;
@@ -397,11 +436,27 @@ a:hover{
         &-inner{
             flex-direction: column;
         }
+        &-wrapper{
+            margin: 0;
+        }
+    }
+    .skill{
+        &-list{
+            gap: 1rem;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            li{
+                width: calc(33% - 1rem);
+            }
+        }
     }
     .works{
         &-inner{
             justify-content: center;
             flex-direction: column;
+            &-ttl{
+                line-height: 2;
+            }
         }
         &-wrapper{
             padding-top: 50px;

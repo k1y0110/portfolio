@@ -8,10 +8,10 @@ body {
   color: #575757;
 }
 
-@-webkit-keyframes infinity-scroll-down {
+@-webkit-keyframes scroll-down1 {
   from {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
   }
   to {
     -webkit-transform: translateY(-100%);
@@ -19,30 +19,70 @@ body {
   }
 }
 
-@keyframes infinity-scroll-down {
+@keyframes scroll-down1 {
   from {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
   }
   to {
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
   }
 }
-@-webkit-keyframes infinity-scroll-up {
+@-webkit-keyframes scroll-down2 {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+  }
+}
+@keyframes scroll-down2 {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+  }
+}
+@-webkit-keyframes scroll-up1 {
   from {
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+@keyframes scroll-up1 {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+@-webkit-keyframes scroll-up2 {
+  from {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
   }
   to {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
 }
-@keyframes infinity-scroll-up {
+@keyframes scroll-up2 {
   from {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
   }
   to {
     -webkit-transform: translateY(0);
@@ -280,9 +320,13 @@ a:hover {
 .loop-down {
   left: 0;
 }
-.loop-down ul {
-  -webkit-animation: infinity-scroll-down 40s infinite linear 1s both;
-          animation: infinity-scroll-down 40s infinite linear 1s both;
+.loop-down ul:first-of-type {
+  -webkit-animation: scroll-down1 96s -48s linear infinite;
+          animation: scroll-down1 96s -48s linear infinite;
+}
+.loop-down ul:last-of-type {
+  -webkit-animation: scroll-down2 96s linear infinite;
+          animation: scroll-down2 96s linear infinite;
 }
 .loop-down ul li {
   -webkit-writing-mode: vertical-rl;
@@ -292,9 +336,13 @@ a:hover {
 .loop-up {
   right: 0;
 }
-.loop-up ul {
-  -webkit-animation: infinity-scroll-up 40s infinite linear 1s both;
-          animation: infinity-scroll-up 40s infinite linear 1s both;
+.loop-up ul:first-of-type {
+  -webkit-animation: scroll-up1 96s -48s linear infinite;
+          animation: scroll-up1 96s -48s linear infinite;
+}
+.loop-up ul:last-of-type {
+  -webkit-animation: scroll-up2 96s linear infinite;
+          animation: scroll-up2 96s linear infinite;
 }
 .loop-up ul li {
   -webkit-writing-mode: vertical-lr;
@@ -314,6 +362,7 @@ a:hover {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  padding: 0 20px;
 }
 
 .about-ttl {
@@ -335,6 +384,7 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
 }
 .about-img {
   height: 250px;
@@ -375,8 +425,10 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 3rem;
 }
 .skill-list li {
   display: -webkit-box;
@@ -386,10 +438,13 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
   color: #000;
 }
-.skill-list li img {
+.skill-list li svg {
   width: 80px;
   height: 80px;
 }
@@ -400,16 +455,16 @@ a:hover {
 .works-ttl {
   font-size: 4rem;
   font-weight: bold;
-  padding-bottom: 50px;
 }
 .works-inner {
   font-family: "Noto Sans JP", sans-serif;
   margin: 0 30px;
 }
 .works-inner-ttl {
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: -5px;
   font-size: 3rem;
+  line-height: 3;
   font-weight: bold;
   border-radius: 3px;
 }
@@ -485,6 +540,14 @@ a:hover {
 }
 
 @media screen and (max-width: 1024px) {
+  .header-inner {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header-ttl {
+    margin-left: -50px;
+  }
   .header-nav {
     display: none;
     position: fixed;
@@ -506,6 +569,7 @@ a:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin: 0;
   }
   .header-list-item {
     padding-right: 0 !important;
@@ -517,7 +581,9 @@ a:hover {
   }
   .burger-btn {
     display: block;
-    position: relative;
+    position: absolute;
+    top: 2.5rem;
+    right: 2rem;
     width: 40px;
     height: 28px;
     background: none;
@@ -569,6 +635,20 @@ a:hover {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .about-wrapper {
+    margin: 0;
+  }
+  .skill-list {
+    gap: 1rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .skill-list li {
+    width: calc(33% - 1rem);
+  }
   .works-inner {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -577,6 +657,9 @@ a:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .works-inner-ttl {
+    line-height: 2;
   }
   .works-wrapper {
     padding-top: 50px;
