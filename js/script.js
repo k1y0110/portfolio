@@ -14,6 +14,26 @@ $(function(){
     $('body').removeClass('noscroll');
     $(this).removeClass('sp-menu');
     });
-})
+});
 
 AOS.init();
+
+const firstView = new Swiper('.swiper', {
+    // Optional parameters
+    loop: true,
+    slidesPerView: 1,
+
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+
+  breakpoints: {
+    1025: {
+      slidesPerView: 1.4, 
+      centeredSlides: true,
+      spaceBetween: -3,
+    } 
+  },
+  });
+

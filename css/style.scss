@@ -1,9 +1,6 @@
-html{
-    font-size: 62.5%;
-}
 body{
-    font-family: "Roboto", sans-serif;
-    font-size: 1.6rem;
+    font-family: "Ubuntu", sans-serif;
+    font-size: clamp(1.875rem, 0.902rem + 1.52vw, 3.75rem);
     color: #575757;
 }
 @keyframes scroll-down1{
@@ -76,31 +73,38 @@ body{
     0% {stop-color: #575757;}
     100% {stop-color: #00ffd5;}
  }
+ @keyframes gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
 a:hover{
     opacity: .7;
     transition: .5s;
+}
+.sp-br{
+    display: none;
 }
 .header{
     position: fixed;
     top: 0;
     z-index: 999;
     width: 100%;
-    height: 80px;
     background-color: #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     &-inner{
-        max-width: 1024px;
+        max-width: 1400px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-left: auto;
         margin-right: auto;
-        padding: 0 30px;
+        padding: 0 3rem;
         
     }
     &-ttl{
         display: flex;
-        font-size: 3.2rem;
+        font-size: 33px;
         font-weight: bold;
         text-align: center;
         font-family: "Sankofa Display", sans-serif;
@@ -131,9 +135,9 @@ a:hover{
         animation: txt-animation2 1.5s ease-out;
         margin-right: 50px;
         &-item{
-            font-size: 2rem;
+            font-size: 1.5rem;
             &:not(:last-child){
-                padding-right: 20px;
+                padding-right: 30px;
             }
         }
     }
@@ -159,10 +163,10 @@ a:hover{
         li{
             display: flex;
             justify-content: center;
-            font-size: 1rem;
-            letter-spacing: 1rem;
+            font-size: 16px;
+            letter-spacing: 16px;
             color: #fff;
-            padding-bottom: 1rem;
+            padding-bottom: 16px;
         }
     }
     &-down{
@@ -198,12 +202,67 @@ a:hover{
     display: none;
 }
 .fv{
-    width: 100%;
     margin: 80px auto;
-    img{
-        width: 100%;
-        object-fit: cover;
-        padding: 0 20px;
+    padding: 0 20px;
+    &-item{
+        position: relative;
+        img{
+            border: #000 2px solid;
+        }
+        p{
+            display: block;
+            position: absolute;
+        }
+        &-txt{
+            &01{
+                left:55%;
+                top: 75%;
+                color: #fff;
+            }
+            &02{
+                left: 50%;
+                top: 50%;
+                color: #fff;
+            }
+            &03{
+                left: 50%;
+                transform: translateX(-50%);
+                top: 47%;
+                color: #fff;
+            }
+            &04{
+                left: 50%;
+                transform: translateX(-50%);
+                top: 80%;
+                color: #fff;
+                background-color: #57575780;
+                padding: 0 1rem;
+                line-height: 1.5;
+                white-space: nowrap;
+            }
+            &05{
+                left: 50%;
+                transform: translateX(-50%);
+                top: 80%;
+                color: #fff;
+                background-color: #57575780;
+                padding: 0 1rem;
+                line-height: 1.5;
+            }
+        }
+    }
+    &-message{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-style: italic;
+        font-size: 3rem;
+        font-weight: 800;
+        animation: gradient 15s ease infinite;
+        background: linear-gradient(to right, #1d60fd, #00ffd5, #f3fe93);
+        background-size: 200% 100%;
+        background-clip: text;
+        color: transparent;
     }
 }
 .about{
@@ -214,33 +273,39 @@ a:hover{
         text-align: center;
     }
     &-inner{
-        font-family: "Noto Sans JP", sans-serif;
         padding: 0 30px 50px;
         margin: 0 auto;
+        color: #000;
+    }
+    &-data{
         display: flex;
         justify-content: center;
+        gap: 2rem;
         align-items: center;
         text-align: center;
     }
     &-img{
-        height: 250px;
-        width: 250px;
+        height: 10rem;
+        width: 10rem;
         border-radius: 150px;
     }
-    &-wrapper{
-        margin-left: 50px;
+    &-name{
+        h3{
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        p{
+            font-size: 1rem;
+        }
     }
-    &-me{
-        display: flex;
-        flex-wrap: wrap;
-        width: 300px;
-        margin-bottom: 30px;
-        dt{
-            width: 30%;
-        }
-        dd{
-            width: 70%;
-        }
+    &-txt{
+        font-family: "Zen Kurenaido", sans-serif;
+        display: block;
+        margin-top: 1.5rem;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
     }
 }
 .skill{
@@ -251,23 +316,27 @@ a:hover{
         text-align: center;
     }
     &-inner{
-        font-family: "Noto Sans JP", sans-serif;
+        
         padding: 0 30px 50px;
         margin: 0 auto;
     }
     &-list{
         display: flex;
         justify-content: center;
-        gap: 3rem;
+        gap: 5%;
         li{
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 8rem;
             gap: 1rem;
             color: #000;
+            p{
+                font-size: 2rem;
+            }
             svg{
-                width: 80px;
-                height: 80px;
+                width: 7rem;
+                height: 7rem;
             }
         }
     }
@@ -317,8 +386,10 @@ a:hover{
         }
         a{
             display: block;
+            font-size: 1.5rem;
         }
         .git-url{
+            font-family: "Ubuntu", sans-serif;
             display: block;
             margin: 0 10px 20px;
             color: #bababa;
@@ -349,10 +420,14 @@ a:hover{
 }
 .footer{
     text-align: center;
+    font-size: 1.2rem;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 @media screen and (max-width:1024px){
+    html{
+        font-size: clamp(0.625rem, 0.227rem + 1.99vw, 1.5rem);
+    }
     .header{
         &-inner{
             justify-content: center;
@@ -388,8 +463,8 @@ a:hover{
     .burger-btn{
         display: block;
         position: absolute;
-        top: 2.5rem;
-        right: 2rem;
+        top: 26.5px;
+        right: 30px;
         width: 40px;
         height: 28px;
         background: none;
@@ -430,14 +505,10 @@ a:hover{
         overflow: hidden;
     }
     .about{
-        &-img{
-            margin-bottom: 30px;
-        }
-        &-inner{
-            flex-direction: column;
-        }
-        &-wrapper{
-            margin: 0;
+        &-txt{
+            font-size: 1.4rem;
+            letter-spacing: -1px;
+            white-space: nowrap;
         }
     }
     .skill{
@@ -447,10 +518,17 @@ a:hover{
             flex-wrap: wrap;
             li{
                 width: calc(33% - 1rem);
+                p{
+                    font-size: 1.5rem;
+                }
             }
         }
     }
     .works{
+        &-sp{
+            display: flex;
+            flex-direction: column-reverse;
+        }
         &-inner{
             justify-content: center;
             flex-direction: column;
@@ -465,6 +543,20 @@ a:hover{
             display: block;
             width: 80%;
             margin: 0 auto 50px;
+            h3{
+                font-size: 2.5rem;
+            }
+            p{
+                font-size: 1.4rem;
+            }
         }
+    }
+}
+@media screen and (max-width:768px){
+    .sp-br{
+        display: block;
+    }
+    .fv-message{
+        margin-top: 80px;
     }
 }
