@@ -212,6 +212,8 @@ a:hover{
         p{
             display: block;
             position: absolute;
+            white-space: nowrap;
+            font-size: 2rem;
         }
         &-txt{
             &01{
@@ -238,7 +240,6 @@ a:hover{
                 background-color: #57575780;
                 padding: 0 1rem;
                 line-height: 1.5;
-                white-space: nowrap;
             }
             &05{
                 left: 50%;
@@ -556,7 +557,14 @@ a:hover{
     .sp-br{
         display: block;
     }
-    .fv-message{
-        margin-top: 80px;
+    .fv{
+        &-item{
+            p{
+                font-size: 1.2rem;
+            }
+        }
+        &-message{
+            margin-top: 80px;
+        }
     }
 }

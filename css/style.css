@@ -388,6 +388,8 @@ a:hover {
 .fv-item p {
   display: block;
   position: absolute;
+  white-space: nowrap;
+  font-size: 2rem;
 }
 .fv-item-txt01 {
   left: 55%;
@@ -415,7 +417,6 @@ a:hover {
   background-color: rgba(87, 87, 87, 0.5019607843);
   padding: 0 1rem;
   line-height: 1.5;
-  white-space: nowrap;
 }
 .fv-item-txt05 {
   left: 50%;
@@ -777,6 +778,9 @@ a:hover {
 @media screen and (max-width: 768px) {
   .sp-br {
     display: block;
+  }
+  .fv-item p {
+    font-size: 1.2rem;
   }
   .fv-message {
     margin-top: 80px;
