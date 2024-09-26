@@ -720,6 +720,9 @@ a:hover {
   body.noscroll {
     overflow: hidden;
   }
+  .fv-item p {
+    font-size: 1.7rem;
+  }
   .about-txt {
     font-size: 1.4rem;
     letter-spacing: -1px;
