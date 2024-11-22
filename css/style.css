@@ -561,9 +561,9 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   border: #000 5px solid;
@@ -621,6 +621,9 @@ a:hover {
 .website-ttl {
   background-color: rgb(255, 110, 231);
   color: #000;
+}
+.website .works-box {
+  width: calc((100% - 80px) / 2);
 }
 
 .footer {

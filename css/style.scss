@@ -363,7 +363,7 @@ a:hover{
     &-wrapper{
         margin: 0 auto;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-wrap: wrap;
         border: #000 5px solid;
         border-radius: 3px;
@@ -417,6 +417,9 @@ a:hover{
     &-ttl{
         background-color: rgb(255, 110, 231);
         color: #000;
+    }
+    .works-box{
+        width: calc((100% - 80px) / 2);
     }
 }
 .footer{
